@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const bodyParser=require('body-parser');
+const methodOverride=require('method-override');
+const Room = require('./roomSchema')
 
 
 const app = express();
@@ -11,6 +13,7 @@ const MONGO_URI = "mongodb://localhost:27017/full-house";
 
 app.use(cors());
 app.use(express.json());
+app.use(methodOverride('_method'))
 
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
@@ -36,4 +39,16 @@ app.get('/',(req,res)=>{
 app.post('/getRoomCount',(req,res)=>{
     console.log(req.body);
     res.redirect('/');
+})
+app.put('/updateRoomCount/:id',async (req,res)=>{
+    const { id } = req.params;
+    console.log(req.body);
+    // console.log(req.body);
+    const campground = await Campground.findByIdAndUpdate(id, { ...req.body.count });
+   
+    await Room.save();
+    
+    // req.flash('success', 'Successfully updated campground!');
+    res.redirect('/');
+    
 })
