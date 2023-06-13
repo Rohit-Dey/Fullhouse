@@ -40,9 +40,9 @@ app.post('/getRoomCount',(req,res)=>{
     res.redirect('/');
 })
 app.post('/updateRoomCount/1',async (req,res)=>{
-    const { id } = req.params;
+    const id  = 1
     console.log(req.body);
-   await Room.findByIdAndDelete(id);
+   await Room.findOneAndDelete({roomId:id});
     const room = new Room({roomId:'1',currCount:req.body.count});
     await room.save();
     // req.flash('success', 'Successfully updated campground!');
