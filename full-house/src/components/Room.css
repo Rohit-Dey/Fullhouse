@@ -1,0 +1,6 @@
+.rooms{
+    background-color: #FFBFA9;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
