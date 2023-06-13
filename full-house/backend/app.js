@@ -35,9 +35,11 @@ app.listen(PORT, () => {
 app.get('/',(req,res)=>{
     res.send("Hello");
 })
-app.post('/getRoomCount',(req,res)=>{
-    console.log(req.body);
-    res.redirect('/');
+app.get('/getRoomCount',async (req,res)=>{
+  const id='1';
+  const ct=await Room.find({roomId:id});
+  console.log(ct);
+  res.send("hello");
 })
 app.post('/updateRoomCount/1',async (req,res)=>{
     const id  = 1

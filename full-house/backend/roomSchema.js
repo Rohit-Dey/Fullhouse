@@ -12,8 +12,8 @@ const roomSchema = Schema(
     // required:true
   },
   maxCount:{
-    type:Number,
-    required:true
+    type:Number
+    // required:true
   },
   currentCount:{
     type:Number
