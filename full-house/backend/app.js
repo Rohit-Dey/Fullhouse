@@ -51,3 +51,23 @@ app.post('/updateRoomCount/1',async (req,res)=>{
     res.redirect('/');
     
 })
+app.post('/updateRoomCount/2',async (req,res)=>{
+    const id  = 2
+    console.log(req.body);
+   await Room.findOneAndDelete({roomId:id});
+    const room = new Room({roomId:'2',currentCount:req.body.count});
+    await room.save();
+    // req.flash('success', 'Successfully updated campground!');
+    res.redirect('/');
+
+})
+app.post('/updateRoomCount/3',async (req,res)=>{
+    const id  = 3
+    console.log(req.body);
+   await Room.findOneAndDelete({roomId:id});
+    const room = new Room({roomId:'3',currentCount:req.body.count});
+    await room.save();
+    // req.flash('success', 'Successfully updated campground!');
+    res.redirect('/');
+
+})
