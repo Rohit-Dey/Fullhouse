@@ -13,7 +13,7 @@ const Room3 = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             fetchData();
-        }, 1000)
+        }, 5000)
         fetchData();
     }, [])
 
