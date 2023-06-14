@@ -29,6 +29,31 @@ The system can be easily expanded to monitor multiple rooms or locations, adapti
 
 ### Integration Potential: 
 Integration with existing security systems or access control systems provides a comprehensive security solution.
+
+
+## Use Cases
+
+1. Pandemic Restrictions:
+During pandemic restrictions, it is crucial to manage crowd sizes and enforce social 
+distancing guidelines in public spaces such as malls, restaurants, or event venues to prevent overcrowding and minimizing the risk of virus transmission.
+
+2. ICUs and High Security Areas:
+In environments like ICUs accurate head counts are essential for managing limited resources and ensuring patient safety. Similarily in high security areas maintaing a specified head count is necessary to ensure the security of the vital information stored at that place.
+
+
+3. Malls:
+Keeping the number of customers in check can help prevent overcrowding in marketplaces ,malls etc. By monitoring the head count, the system enhances the safety and enjoyment of visitors, minimizing the risk of accidents or injuries.
+
+Other Places of application:
+- Public Transportation
+- Conference or Event Venues
+- Schools and Educational Institutions
+- Retail Stores
+- Hotels, resorts, and restaurants
+- Libraries and Study Spaces
+
+
+
  
  
  
