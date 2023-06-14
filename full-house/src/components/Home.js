@@ -1,3 +1,5 @@
+import './Home.css'
+
 const Home = () => {
     return (
         <div className="homepage">
@@ -8,3 +10,5 @@ const Home = () => {
         </div>
       );
 }
+
+export default Home;
