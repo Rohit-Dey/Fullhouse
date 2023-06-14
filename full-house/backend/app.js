@@ -35,12 +35,25 @@ app.listen(PORT, () => {
 app.get('/',(req,res)=>{
     res.send("Hello");
 })
-app.get('/getRoomCount',async (req,res)=>{
+app.get('/room1',async (req,res)=>{
   const id='1';
-  const ct=await Room.find({roomId:id});
+  const ct=await Room.findOne({roomId:id});
   console.log(ct);
-  res.send("hello");
+  res.status(200).json(ct);
 })
+app.get('/room2',async (req,res)=>{
+  const id='2';
+  const ct=await Room.findOne({roomId:id});
+  console.log(ct);
+  res.status(200).json(ct);
+})
+app.get('/room3',async (req,res)=>{
+  const id='3';
+  const ct=await Room.findOne({roomId:id});
+  console.log(ct);
+  res.status(200).json(ct);
+})
+
 app.post('/updateRoomCount/1',async (req,res)=>{
     const id  = 1
     console.log(req.body);
