@@ -8,7 +8,7 @@ const Room1 = () => {
     const [data, setData] = useState({});
     const [previousData, setPrevData] = useState({});
     const [show, setShow] = useState(false);
-    const vidpath = require('../videos/puppy.mp4')
+    const vidpath = require('../videos/Video3.mp4')
 
     useEffect(() => {
         const interval = setInterval(() => {

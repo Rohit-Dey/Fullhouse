@@ -8,7 +8,7 @@ const Room2 = () => {
     const [data, setData] = useState({});
     const [previousData, setPrevData] = useState({});
     const [show, setShow] = useState(false);
-    const vidpath = require('../videos/Video.mp4')
+    const vidpath = require('../videos/Video2.webm')
 
     useEffect(() => {
         const interval = setInterval(() => {
