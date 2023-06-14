@@ -6,6 +6,7 @@ import LimitPopup from './LimitPopup.js'
 
 const Room1 = () => {
     const [data, setData] = useState({});
+    const [previousData, setPrevData] = useState({});
     const [show, setShow] = useState(false);
     const vidpath = require('../videos/puppy.mp4')
 
@@ -18,16 +19,16 @@ const Room1 = () => {
 
     useEffect(()=>{
         setShow(data.currentCount >= data.maxCount);
-    },[show])
+    },[previousData])
     const fetchData = async () => {
         try {
           const response = await fetch('http://localhost:3000/room1');
           const json = await response.json();
           
-         
-            setData(json)
-
-          console.log(json)
+          if(previousData && previousData.currentCount !== json.currentCount || previousData.maxCount !== json.maxCount){
+            setData(json);
+            setPrevData(json);
+          }
         } catch (error) {
           console.error(error);
         }
@@ -35,6 +36,7 @@ const Room1 = () => {
     const text = "Room 1 limit exceeded"
     return(
         <div className='rooms'>
+            {show && <LimitPopup text={text}/>}
             <VideoComponent src={vidpath}/>
             <div className='countdiv'><CountShow count={data.currentCount}/></div>
             
